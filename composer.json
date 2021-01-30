@@ -1,0 +1,43 @@
+{
+    "name": "darkgoldblade01/dnd-5e-api",
+    "description": "A DND 5e API wrapper written in PHP",
+    "keywords": [
+        "darkgoldblade01",
+        "dnd-5e-api"
+    ],
+    "homepage": "https://github.com/darkgoldblade01/dnd-5e-api",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Brian Logan",
+            "email": "brianldj@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^7.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Darkgoldblade01\\Dnd5eApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Darkgoldblade01\\Dnd5eApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
