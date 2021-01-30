@@ -1,7 +1,7 @@
 # DND 5e API Wrapper in PHP
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/darkgoldblade01/dnd-5e-api.svg?style=flat-square)](https://packagist.org/packages/darkgoldblade01/dnd-5e-api)
-[![Build Status](https://img.shields.io/travis/com/darkgoldblade01/dnd-5e-api-php/master.svg?style=flat-square)](https://travis-ci.org/darkgoldblade01/dnd-5e-api-php)
+[![Build Status](https://img.shields.io/travis/com/darkgoldblade01/dnd-5e-api-php/master.svg?style=flat-square)](https://travis-ci.com/darkgoldblade01/dnd-5e-api-php)
 [![Quality Score](https://img.shields.io/scrutinizer/g/darkgoldblade01/dnd-5e-api-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/darkgoldblade01/dnd-5e-api-php)
 [![Total Downloads](https://img.shields.io/packagist/dt/darkgoldblade01/dnd-5e-api-php.svg?style=flat-square)](https://packagist.org/packages/darkgoldblade01/dnd-5e-api-php)
 
