@@ -3,6 +3,7 @@
 namespace Darkgoldblade01\Dnd5eApi;
 
 use Darkgoldblade01\Dnd5eApi\Api\AbilityScores;
+use Darkgoldblade01\Dnd5eApi\Api\Proficiencies;
 use Darkgoldblade01\Dnd5eApi\Api\Skills;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
@@ -55,6 +56,19 @@ class Dnd5eApi
     protected function skills(): Skills
     {
         return new Skills();
+    }
+
+    /**
+     * Proficiencies
+     *
+     * Return a new instance of the DND API
+     * under the Proficiencies.
+     *
+     * @return Proficiencies
+     */
+    protected function proficiencies(): Proficiencies
+    {
+        return new Proficiencies();
     }
 
     /**
