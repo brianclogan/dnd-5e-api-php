@@ -2,7 +2,11 @@
 
 namespace Darkgoldblade01\Dnd5eApi\Models;
 
-class Model extends \Illuminate\Database\Eloquent\Model
+/**
+ * Class Model
+ * @package Darkgoldblade01\Dnd5eApi\Models
+ */
+class Model
 {
 
     /**
@@ -13,7 +17,8 @@ class Model extends \Illuminate\Database\Eloquent\Model
      *
      * @return Model
      */
-    public function fill(array $data) {
+    public function fill(array $data): Model
+    {
         foreach($data AS $key => $value) {
             if($key === 'url') {
                 continue;
@@ -21,6 +26,16 @@ class Model extends \Illuminate\Database\Eloquent\Model
             $this->{$key} = $value;
         }
         return $this;
+    }
+
+    /**
+     * Convert the Model to an array
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return (array) $this;
     }
 
 }

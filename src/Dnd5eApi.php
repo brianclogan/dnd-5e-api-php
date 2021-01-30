@@ -2,8 +2,9 @@
 
 namespace Darkgoldblade01\Dnd5eApi;
 
-use Darkgoldblade01\Dnd5eApi\Api\AbilitySkills;
+use Darkgoldblade01\Dnd5eApi\Api\AbilityScores;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
 
 class Dnd5eApi
 {
@@ -22,7 +23,7 @@ class Dnd5eApi
      */
     private $client;
 
-    public function __construct($base = '') {
+    public function __construct() {
         $this->client = new Client([
             "base_uri" => $this->base_uri,
         ]);
@@ -34,11 +35,11 @@ class Dnd5eApi
      * Return a new instance of the DND API
      * under the Ability Skills.
      * 
-     * @return AbilitySkills
+     * @return AbilityScores
      */
-    public function ability_skills(): AbilitySkills
+    protected function ability_skills(): AbilityScores
     {
-        return new AbilitySkills();
+        return new AbilityScores();
     }
 
     /**
@@ -49,8 +50,12 @@ class Dnd5eApi
     protected function get($endpoint = null) {
         try {
             $response = $this->client->get($endpoint);
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
+        } catch (BadResponseException $e) {
+            if($e->getCode() === '404') {
+                throw new NotFoundException('The ability skill ID of `' . $endpoint .'` does not exist.');
+            } else {
+                throw new \Exception($e);
+            }
         }
         return json_decode($response->getBody()->getContents(), true);
     }
