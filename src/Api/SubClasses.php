@@ -17,7 +17,7 @@ class SubClasses extends Dnd5eApi
     /**
      * @var string
      */
-    protected $base_uri = 'https://www.dnd5eapi.co/api/classes/';
+    protected $base_uri = 'https://www.dnd5eapi.co/api/subclasses/';
 
     /**
      * @return array
