@@ -63,6 +63,10 @@ class Dnd5eApi
      * @throws GuzzleException|NotFoundException
      */
     protected function get($endpoint = null) {
+        if(strpos($endpoint, '_') !== false) {
+            $endpoint = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $endpoint)));
+
+        }
         try {
             $response = $this->client->get($endpoint);
         } catch (BadResponseException $e) {

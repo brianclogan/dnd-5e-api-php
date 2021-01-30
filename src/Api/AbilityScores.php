@@ -4,6 +4,8 @@ namespace Darkgoldblade01\Dnd5eApi\Api;
 
 use Darkgoldblade01\Dnd5eApi\Dnd5eApi;
 use Darkgoldblade01\Dnd5eApi\Models\AbilityScores as AbilityScoresModel;
+use Darkgoldblade01\Dnd5eApi\NotFoundException;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Class AbilityScores
@@ -19,7 +21,7 @@ class AbilityScores extends Dnd5eApi
 
     /**
      * @return array
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException|NotFoundException
      */
     public function all(): array
     {
@@ -35,7 +37,7 @@ class AbilityScores extends Dnd5eApi
      * @param $name
      * @param $arguments
      * @return AbilityScoresModel
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException|NotFoundException
      */
     public function __call($name, $arguments): AbilityScoresModel
     {
