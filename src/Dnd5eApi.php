@@ -3,8 +3,10 @@
 namespace Darkgoldblade01\Dnd5eApi;
 
 use Darkgoldblade01\Dnd5eApi\Api\AbilityScores;
+use Darkgoldblade01\Dnd5eApi\Api\Skills;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\GuzzleException;
 
 class Dnd5eApi
 {
@@ -30,22 +32,35 @@ class Dnd5eApi
     }
 
     /**
-     * Ability Skills
+     * Ability Scores
      *
      * Return a new instance of the DND API
-     * under the Ability Skills.
-     * 
+     * under the Ability Scores.
+     *
      * @return AbilityScores
      */
-    protected function ability_skills(): AbilityScores
+    protected function ability_scores(): AbilityScores
     {
         return new AbilityScores();
     }
 
     /**
+     * Skills
+     *
+     * Return a new instance of the DND API
+     * under the Skills.
+     *
+     * @return Skills
+     */
+    protected function skills(): Skills
+    {
+        return new Skills();
+    }
+
+    /**
      * @param null $endpoint
      * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException|NotFoundException
      */
     protected function get($endpoint = null) {
         try {
