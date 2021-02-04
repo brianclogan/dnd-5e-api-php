@@ -16,7 +16,6 @@ before_script:
   - phpenv config-add tests/php.ini
 
 script:
-  -
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
